@@ -27,6 +27,11 @@ namespace ComboBoxPersona
 
             ObservableCollection<Persona> personas = Persona.GetPersonas();
             ListaPersonasComboBox.DataContext = personas;
+            
+        }
+
+        private void StackPanel_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
             SelectorId.DataContext = ListaPersonasComboBox.SelectedItem;
         }
     }

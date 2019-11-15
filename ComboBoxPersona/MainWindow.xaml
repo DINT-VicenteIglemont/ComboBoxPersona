@@ -19,15 +19,13 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Text="{Binding Nombre}"/>
-                <Image Source="{Binding Path=Sexo , Converter={StaticResource conversor}}"/>
+                <Image Source="{Binding Sexo , Converter={StaticResource conversor}}"/>
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
 
-    <StackPanel>
-        <ComboBox x:Name="ListaPersonasComboBox" ItemsSource="{Binding}" ItemTemplate="{StaticResource plantillaComboBox}" Width="250" HorizontalAlignment="Center">
-            
-        </ComboBox>
+    <StackPanel DataContextChanged="StackPanel_DataContextChanged">
+        <ComboBox x:Name="ListaPersonasComboBox" ItemsSource="{Binding}" ItemTemplate="{StaticResource plantillaComboBox}" Width="250" HorizontalAlignment="Center"/>
 
         <TextBlock>
             <Run Text="Has seleccionado el elemento: "/>
